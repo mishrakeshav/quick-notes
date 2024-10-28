@@ -98,3 +98,75 @@ def main():
     bear bear
     """
 ```
+
+
+### Abstract Factory Pattern 
+- used when you need to create families of related objects without specifying their exact class
+
+```python
+from abc import ABC, abstractmethod
+
+# 1. Product Interfaces (Phone and Watch)
+class Phone(ABC):
+    @abstractmethod
+    def specs(self) -> str:
+        pass
+
+class Watch(ABC):
+    @abstractmethod
+    def specs(self) -> str:
+        pass
+
+# 2. Concrete Products for Apple
+class ApplePhone(Phone):
+    def specs(self) -> str:
+        return "Apple iPhone 14"
+
+class AppleWatch(Watch):
+    def specs(self) -> str:
+        return "Apple Watch Series 8"
+
+# 3. Concrete Products for Samsung
+class SamsungPhone(Phone):
+    def specs(self) -> str:
+        return "Samsung Galaxy S23"
+
+class SamsungWatch(Watch):
+    def specs(self) -> str:
+        return "Samsung Galaxy Watch 6"
+
+# 4. Abstract Factory Interface
+class GadgetFactory(ABC):
+    @abstractmethod
+    def create_phone(self) -> Phone:
+        pass
+
+    @abstractmethod
+    def create_watch(self) -> Watch:
+        pass
+
+# 5. Concrete Factories for Apple and Samsung
+class AppleFactory(GadgetFactory):
+    def create_phone(self) -> Phone:
+        return ApplePhone()
+
+    def create_watch(self) -> Watch:
+        return AppleWatch()
+
+class SamsungFactory(GadgetFactory):
+    def create_phone(self) -> Phone:
+        return SamsungPhone()
+
+    def create_watch(self) -> Watch:
+        return SamsungWatch()
+
+# 6. Client Code: Uses the factory to get gadgets
+def get_gadgets(factory: GadgetFactory):
+    phone = factory.create_phone()
+    watch = factory.create_watch()
+    print(f"Phone: {phone.specs()}, Watch: {watch.specs()}")
+
+# Usage: Get gadgets from different factories
+get_gadgets(AppleFactory())    # Output: Phone: Apple iPhone 14, Watch: Apple Watch Series 8
+get_gadgets(SamsungFactory())  # Output: Phone: Samsung Galaxy S23, Watch: Samsung Galaxy Watch 6
+```
