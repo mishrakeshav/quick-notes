@@ -83,6 +83,46 @@ const LazyComponent = React.lazy(() => import('./LazyComponent'));
 - React Testing Library 
 
 # Notes on debounce and throttle 
-https://www.developerway.com/posts/debouncing-in-react
+```js 
+function debounce(func, delay) {
+  let timeoutId;
+
+  return function (...args) {
+    if(timeoutId){
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+}
+
+const DebounceExample = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // Using useCallback to ensure the debounced function does not get recreated on every render
+  const debouncedSearch = useCallback(debounce((query) => {
+    console.log('Searching for:', query);
+    // Here, you can call your API or perform the search operation
+  }, 100), []);
+
+  const handleInputChange = (event) => {
+    handleChange(event);
+    debouncedSearch(event.target.value);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleInputChange}
+        placeholder="Search..."
+      />
+    </div>
+  );
+};```
 
 
