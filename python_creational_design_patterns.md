@@ -101,7 +101,8 @@ def main():
 
 
 ### Abstract Factory Pattern 
-- used when you need to create families of related objects without specifying their exact class
+- Used when you need to create families of related objects without specifying their exact class
+- Provides a way to encapsulate a group of individual factories.
 
 ```python
 from abc import ABC, abstractmethod
@@ -170,3 +171,28 @@ def get_gadgets(factory: GadgetFactory):
 get_gadgets(AppleFactory())    # Output: Phone: Apple iPhone 14, Watch: Apple Watch Series 8
 get_gadgets(SamsungFactory())  # Output: Phone: Samsung Galaxy S23, Watch: Samsung Galaxy Watch 6
 ```
+
+### Builder Pattern 
+- The Builder Pattern is a creational design pattern that helps you create complex objects step-by-step. Instead of having a huge constructor with many parameters, the Builder Pattern lets you build an object gradually by setting different parts one at a time.
+- The last build method returns the object 
+Example : 
+```python
+builder = ComputerBuilder()
+gaming_pc = (builder
+             .set_cpu("Intel i9")
+             .set_gpu("NVIDIA RTX 4090")
+             .set_ram(32)
+             .set_storage(1000)
+             .build())
+
+office_pc = (builder
+             .set_cpu("Intel i5")
+             .set_ram(16)
+             .set_storage(512)
+             .build())
+```
+
+
+### Prototype Pattern 
+- The Prototype Pattern is a creational design pattern that lets you create a new object by copying an existing object (called a prototype), instead of building it from scratch
+- This is useful when creating objects is expensive (in terms of time or resources) or when you want to have a copy of an existing object with slight modifications.
