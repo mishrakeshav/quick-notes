@@ -1,37 +1,37 @@
  **React**
-   - Component Based
-   - Declarative
-   - Single Page Applications
+- Component Based
+- Declarative
+- Single Page Applications
 
-   - Components are the building blocks
+- Components are the building blocks
 
-   1. React creates a virtual DOM tree when a component renders.
-   2. If state or props change, React diffs the new virtual DOM with the previous one.
-   3. Only the changed nodes are updated in the real DOM.
+1. React creates a virtual DOM tree when a component renders.
+2. If state or props change, React diffs the new virtual DOM with the previous one.
+3. Only the changed nodes are updated in the real DOM.
 
-   **Props** - readonly data passed from parent to child components  
-   **State** - Local data that can change and cause the UI to rerender  
+**Props** - readonly data passed from parent to child components  
+**State** - Local data that can change and cause the UI to rerender  
 
-   **Lifecycle methods**
-   - Mounting
-   - Updating
-   - Unmounting
-   - `useEffect`: Handles side effects (like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`).
+**Lifecycle methods**
+- Mounting
+- Updating
+- Unmounting
+- `useEffect`: Handles side effects (like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`).
 
-   **Example:**
-   ```javascript
-   // Runs once (like componentDidMount)
-   useEffect(() => {
-       console.log('Component mounted!');
+**Example:**
+```js
+// Runs once (like componentDidMount)
+useEffect(() => {
+   console.log('Component mounted!');
 
-       // Cleanup function (like componentWillUnmount)
-       return () => console.log('Component will unmount!');
-   }, []);
+   // Cleanup function (like componentWillUnmount)
+   return () => console.log('Component will unmount!');
+}, []);
 
-   // Runs every time count changes (like componentDidUpdate)
-   useEffect(() => {
-       console.log('Count changed:', count);
-   }, [count]);
+// Runs every time count changes (like componentDidUpdate)
+useEffect(() => {
+   console.log('Count changed:', count);
+}, [count]);
 
 **useLayoutEffect**
 - Runs synchronously immediately after all DOM mutations but before the browser has a chance to paint.
@@ -110,5 +110,3 @@ const DebounceExample = () => {
     </div>
   );
 };```
-
-
