@@ -81,3 +81,8 @@ const LazyComponent = React.lazy(() => import('./LazyComponent'));
 ### Testing in React 
 - Jest 
 - React Testing Library 
+
+# Notes on debounce and throttle 
+https://www.developerway.com/posts/debouncing-in-react
+
+
