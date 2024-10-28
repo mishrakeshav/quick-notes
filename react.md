@@ -32,7 +32,7 @@ useEffect(() => {
 useEffect(() => {
    console.log('Count changed:', count);
 }, [count]);
-
+```
 **useLayoutEffect**
 - Runs synchronously immediately after all DOM mutations but before the browser has a chance to paint.
 
