@@ -15,7 +15,7 @@ Creational design patterns are concerned with the way of creating objects in sof
    - Ensures a class has only one instance and provides a global point of access to that instance.
 
 2. **Factory Method Pattern**
-   - Defines an interface for creating an object but lets subclasses alter the type of objects that will be created.
+   - provides a way to create objects without specifying the exact class to instantiate
 
 3. **Abstract Factory Pattern**
    - Provides an interface for creating families of related or dependent objects without specifying their concrete classes.

@@ -6,7 +6,7 @@
 2. Encapsulation
   - hides the internal state of an object and allows modification only through methods.
   - Use private variables with a single underscore _ (partial protected) or double underscores __ (private) to restrict access.
-3. Abstraction ( from abc import ABC, abstractmethod)
+3. Abstraction (Abstraction hides complex logic and exposes only essential features.)
 4. Inhertance (multiple,multilevel,hybrid)
 5. Polymorphism (overriding,overloading,operator overloading)
 
