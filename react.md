@@ -41,11 +41,12 @@ useEffect(() => {
 - Does not cause rerender on change and retains the value on rerenders.
 - Can be used for accessing DOM elements or storing mutable values, etc.
 
-There are majorly 4 hooks that are used:
+There are majorly 5 hooks that are used:
 - `useState` - to manage state
 - `useEffect` - to manage lifecycle and side effects of a component
 - `useContext` - provides a way to access context values
 - `useReducer` - A hook for managing complex state logic in functional components
+- `useRef` - Hook that returns a mutable ref object whose `.current` can hold any value.
 
 ### `createContext`, `useContext`
 - Centralized state management
